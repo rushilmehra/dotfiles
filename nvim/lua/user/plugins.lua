@@ -83,6 +83,7 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig"
   use "jose-elias-alvarez/nvim-lsp-ts-utils"
   use "akinsho/flutter-tools.nvim"
+  use "ludovicchabant/vim-gutentags"
 
   -- Formatting
   use "jose-elias-alvarez/null-ls.nvim"
