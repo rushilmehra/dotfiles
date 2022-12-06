@@ -28,13 +28,13 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("gO", ":TSLspOrganize<CR>")
   buf_set_keymap("gI", ":TSLspRenameFile<CR>")
   buf_set_keymap("go", ":TSLspImportAll<CR>")
-  if client.resolved_capabilities.document_formatting then
+  if client.server_capabilities.documentFormattingProvider then
     vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
   end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 require('lspconfig')['rust_analyzer'].setup {
   on_attach = on_attach,
@@ -62,3 +62,8 @@ require('lspconfig')['sumneko_lua'].setup {
     }
   }
 }
+
+require('lspconfig')['gopls'].setup {
+  on_attach = on_attach,
+}
+
