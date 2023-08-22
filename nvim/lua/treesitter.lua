@@ -1,5 +1,5 @@
 require('nvim-treesitter.configs').setup {
-  ensure_installed = { "python", "javascript", "tsx", "html", "typescript", "lua" },
+  ensure_installed = { "python", "lua", "rust", "c", "go" },
   highlight = {
     enable = true,
     disable = {},
