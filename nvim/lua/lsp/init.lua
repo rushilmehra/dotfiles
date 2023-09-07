@@ -25,13 +25,13 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("ga", "<cmd>lua vim.lsp.buf.code_action()<CR>")
   buf_set_keymap("<C-x><C-x>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
   buf_set_keymap("gl", "<cmd>lua vim.diagnostic.open_float()<CR>")
-  if client.server_capabilities.documentFormattingProvider then
+  if client.name ~= "clangd" and client.server_capabilities.documentFormattingProvider then
     vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
   end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 require('lspconfig')['rust_analyzer'].setup {
   on_attach = on_attach,
@@ -64,3 +64,6 @@ require('lspconfig')['gopls'].setup {
   on_attach = on_attach,
 }
 
+require('lspconfig')['clangd'].setup{
+  on_attach = on_attach,
+}
