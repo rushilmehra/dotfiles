@@ -1,0 +1,145 @@
+# Common recent settings file for Wireshark 4.0.8.
+#
+# This file is regenerated each time Wireshark is quit
+# and when changing configuration profile.
+# So be careful, if you want to make manual changes here.
+
+######## Recent capture files (latest last), cannot be altered through command line ########
+
+recent.capture_file: /Users/rmehra/Downloads/Websocket1006-819457b07da92ab1-ORD-tcp-stream-118.pcapng
+recent.capture_file: /Users/rmehra/Downloads/Websocket1006-12-streams.pcapng
+recent.capture_file: /Users/rmehra/Downloads/client2.pcapng
+recent.capture_file: /Users/rmehra/Downloads/origin1.pcap
+recent.capture_file: /Users/rmehra/Downloads/client1.pcapng
+recent.capture_file: /Users/rmehra/test.pcap
+recent.capture_file: /Users/rmehra/Documents/bastion/bastion_main.pcap
+recent.capture_file: /Users/rmehra/h3nginx.pcap
+recent.capture_file: /Users/rmehra/oxy.pcap
+recent.capture_file: /Users/rmehra/Documents/bastion/bastion.pcap
+
+######## Recent capture filters (latest last), cannot be altered through command line ########
+
+
+######## Recent display filters (latest last), cannot be altered through command line ########
+
+recent.display_filter: quic
+recent.display_filter: tcp.stream eq 12
+recent.display_filter: tcp.stream eq 64
+recent.display_filter: tcp.stream == 51
+recent.display_filter: tcp.port==443
+recent.display_filter: (ipv6.dst == 2606:4700:10::ac43:24a0 or ipv6.src == 2606:4700:10::ac43:24a0) and tls
+recent.display_filter: ipv6.dst == 2606:4700:10::ac43:24a0 or ipv6.src == 2606:4700:10::ac43:24a0
+recent.display_filter: ipv6.dst == 2606:4700:10::ac43:24a0
+recent.display_filter: tls
+recent.display_filter: ipv6.dst == 2606:4700:10::6816:1789 or ipv6.src == 2606:4700:10::6816:1789
+
+# Main window geometry.
+# Decimal numbers.
+gui.geometry_main_x: 0
+gui.geometry_main_y: 38
+gui.geometry_main_width: 1512
+gui.geometry_main_height: 916
+
+# Main window maximized.
+# TRUE or FALSE (case-insensitive).
+gui.geometry_main_maximized: TRUE
+
+# Leftalign Action Buttons.
+# TRUE or FALSE (case-insensitive).
+gui.geometry_leftalign_actions: FALSE
+
+# Statusbar left pane size.
+# Decimal number.
+gui.geometry_status_pane: 250
+
+# Statusbar middle pane size.
+# Decimal number.
+gui.geometry_status_pane_right: 250
+
+# Last used Configuration Profile.
+gui.last_used_profile: Default
+
+# WLAN statistics upper pane size.
+# Decimal number.
+gui.geometry_status_wlan_stats_pane: 200
+
+# Warn if running with elevated permissions (e.g. as root).
+# TRUE or FALSE (case-insensitive).
+privs.warn_if_elevated: TRUE
+
+# Warn if Wireshark is unable to capture.
+# TRUE or FALSE (case-insensitive).
+sys.warn_if_no_capture: TRUE
+
+# Find packet search in.
+# One of: PACKET_LIST, PACKET_DETAILS, PACKET_BYTES
+gui.search_in: PACKET_LIST
+
+# Find packet character set.
+# One of: NARROW_AND_WIDE, NARROW, WIDE
+gui.search_char_set: NARROW_AND_WIDE
+
+# Find packet case sensitive search.
+# TRUE or FALSE (case-insensitive).
+gui.search_case_sensitive: FALSE
+
+# Find packet search type.
+# One of: DISPLAY_FILTER, HEX_VALUE, STRING, REGEX
+gui.search_type: DISPLAY_FILTER
+
+# Geometry and maximized state of SequenceDialog window.
+# Decimal integers.
+gui.geom.SequenceDialog.x: 0
+gui.geom.SequenceDialog.y: 38
+gui.geom.SequenceDialog.width: 1512
+gui.geom.SequenceDialog.height: 732
+# TRUE or FALSE (case-insensitive).
+gui.geom.SequenceDialog.maximized: FALSE
+
+# Geometry and maximized state of ManageInterfacesDialog window.
+# Decimal integers.
+gui.geom.ManageInterfacesDialog.x: 371
+gui.geom.ManageInterfacesDialog.y: 281
+gui.geom.ManageInterfacesDialog.width: 750
+gui.geom.ManageInterfacesDialog.height: 425
+# TRUE or FALSE (case-insensitive).
+gui.geom.ManageInterfacesDialog.maximized: FALSE
+
+# Geometry and maximized state of PacketDialog window.
+# Decimal integers.
+gui.geom.PacketDialog.x: 0
+gui.geom.PacketDialog.y: 38
+gui.geom.PacketDialog.width: 756
+gui.geom.PacketDialog.height: 916
+# TRUE or FALSE (case-insensitive).
+gui.geom.PacketDialog.maximized: FALSE
+
+# Geometry and maximized state of PreferencesDialog window.
+# Decimal integers.
+gui.geom.PreferencesDialog.x: 416
+gui.geom.PreferencesDialog.y: 219
+gui.geom.PreferencesDialog.width: 738
+gui.geom.PreferencesDialog.height: 521
+# TRUE or FALSE (case-insensitive).
+gui.geom.PreferencesDialog.maximized: FALSE
+
+# Geometry and maximized state of ShowPacketBytesDialog window.
+# Decimal integers.
+gui.geom.ShowPacketBytesDialog.x: 417
+gui.geom.ShowPacketBytesDialog.y: 186
+gui.geom.ShowPacketBytesDialog.width: 1706
+gui.geom.ShowPacketBytesDialog.height: 1040
+# TRUE or FALSE (case-insensitive).
+gui.geom.ShowPacketBytesDialog.maximized: FALSE
+
+# Custom colors.
+# List of custom colors selected in Qt color picker.
+gui.custom_colors: 
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff"

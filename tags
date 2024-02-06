@@ -1,0 +1,27 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+M.setup 	nvim/lua/user/lsp/jedi.lua	/^M.setup = function(on_attach, capabilities)$/;"	f
+M.setup 	nvim/lua/user/lsp/null-ls.lua	/^M.setup = function(on_attach)$/;"	f
+M.setup 	nvim/lua/user/lsp/pyright.lua	/^M.setup = function(on_attach, capabilities)$/;"	f
+["<S-Tab>"] 	nvim/lua/user/cmp.lua	/^    ["<S-Tab>"] = cmp.mapping(function(fallback)$/;"	f
+["<Tab>"] 	nvim/lua/user/cmp.lua	/^    ["<Tab>"] = cmp.mapping(function(fallback)$/;"	f
+buf_set_keymap	nvim/lua/user/lsp/init.lua	/^  local function buf_set_keymap(key, cmd)$/;"	f
+expand 	nvim/lua/user/cmp.lua	/^    expand = function(args)$/;"	f
+format 	nvim/lua/user/cmp.lua	/^    format = function(entry, vim_item)$/;"	f
+if vim.api.nvim_call_function('has', {'nvim-0.5'}) ~	nvim/plugin/packer_compiled.lua	/^if vim.api.nvim_call_function('has', {'nvim-0.5'}) ~= 1 then$/;"	f
+local buf_map 	nvim/lua/user/lsp/jedi.lua	/^local buf_map = function(bufnr, mode, lhs, rhs, opts)$/;"	f
+local check_backspace 	nvim/lua/user/cmp.lua	/^local check_backspace = function()$/;"	f
+local no_errors, error_msg 	nvim/plugin/packer_compiled.lua	/^local no_errors, error_msg = pcall(function()$/;"	f
+local on_attach 	nvim/lua/user/lsp/init.lua	/^local on_attach = function(client, bufnr)$/;"	f
+local on_attach_override 	nvim/lua/user/lsp/tsserver.lua	/^local on_attach_override = function(on_attach, buf_map)$/;"	f
+on_attach 	nvim/lua/user/lsp/jedi.lua	/^        on_attach = function(client, bufnr)$/;"	f
+on_attach 	nvim/lua/user/lsp/tsserver.lua	/^    on_attach = function (client, bufnr)$/;"	f
+open_fn 	nvim/lua/user/plugins.lua	/^    open_fn = function()$/;"	f
+save_profiles	nvim/plugin/packer_compiled.lua	/^local function save_profiles(threshold)$/;"	f
+time 	nvim/plugin/packer_compiled.lua	/^  time = function(chunk, start) end$/;"	f
+time 	nvim/plugin/packer_compiled.lua	/^  time = function(chunk, start)$/;"	f
+try_loadstring	nvim/plugin/packer_compiled.lua	/^local function try_loadstring(s, component, name)$/;"	f
