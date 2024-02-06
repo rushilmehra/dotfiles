@@ -10,6 +10,8 @@ vim.diagnostic.config({
 local opts = { silent = true, noremap = true }
 
 local on_attach = function(client, bufnr)
+  vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
+
   local function buf_set_keymap(key, cmd)
     vim.api.nvim_buf_set_keymap(bufnr, "n", key, cmd, opts)
   end
@@ -25,9 +27,6 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("ga", "<cmd>lua vim.lsp.buf.code_action()<CR>")
   buf_set_keymap("<C-x><C-x>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
   buf_set_keymap("gl", "<cmd>lua vim.diagnostic.open_float()<CR>")
-  if client.name ~= "clangd" and client.server_capabilities.documentFormattingProvider then
-    vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
-  end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -35,14 +34,7 @@ capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 require('lspconfig')['rust_analyzer'].setup {
   on_attach = on_attach,
-  flags = {},
-  settings = {
-    ['rust-analyzer'] = {
-      rustfmt = {
-        extraArgs = { "+nightly", },
-      },
-    },
-  },
+  capabilities = capabilities
 }
 
 require('lspconfig')['lua_ls'].setup {

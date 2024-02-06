@@ -11,6 +11,4 @@ fish_hybrid_key_bindings
 alias vim="nvim"
 alias ls="ls -laG"
 
-set PATH /home/rmehra/lua-language-server/bin/ $PATH
-set PATH /home/rmehra/.cargo/bin $PATH
-set PATH /home/rmehra/go/bin/ $PATH
+set PATH /Users/rmehra/.cargo/bin $PATH

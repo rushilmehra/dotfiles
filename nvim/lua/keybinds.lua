@@ -4,10 +4,8 @@ local term_opts = { silent = true }
 
 vim.cmd('cabbrev h vert h')
 
-keymap('i', 'kj', '<Esc>', opts)
-keymap('i', 'jk', '<Esc>', opts)
-
 keymap('n', '<Space>', '<C-w>', opts)
 
-keymap('t', '<Esc>', '<C-\\><C-n>', opts)
-keymap('n', 's', '<Plug>Lightspeed_omni_s', opts)
+-- center search results when cycling through them
+keymap('n', 'n', 'nzz', opts)
+keymap('n', 'N', 'Nzz', opts)
