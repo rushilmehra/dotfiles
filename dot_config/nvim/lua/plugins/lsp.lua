@@ -44,6 +44,8 @@ return {
       local servers = {
         "lua_ls",
         "rust_analyzer",
+        "gopls",
+        "clangd",
       }
 
       local lspconfig = require("lspconfig")
@@ -77,6 +79,8 @@ return {
           }
         },
         rust_analyzer = base_lsp,
+        gopls = base_lsp,
+        clangd = base_lsp,
       },
     },
   },

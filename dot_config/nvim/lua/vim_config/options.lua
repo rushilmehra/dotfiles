@@ -6,3 +6,4 @@ vim.opt.shiftwidth = 2
 vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.splitright = true
+vim.opt.wrap = false
