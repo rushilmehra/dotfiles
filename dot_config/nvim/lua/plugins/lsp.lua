@@ -80,7 +80,11 @@ return {
         },
         rust_analyzer = base_lsp,
         gopls = base_lsp,
-        clangd = base_lsp,
+        clangd = {
+          on_attach = base_on_attach,
+          capabilities = capabilities,
+          filetypes  = { 'cpp' },
+        },
       },
     },
   },
