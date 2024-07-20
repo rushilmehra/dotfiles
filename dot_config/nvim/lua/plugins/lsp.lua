@@ -50,7 +50,9 @@ return {
 
       local lspconfig = require("lspconfig")
       for _, server in ipairs(servers) do
-        lspconfig[server].setup(opts.servers[server])
+        local settings = opts.servers[server]
+        local actual_settings = settings ~= nil and settings or base_lsp
+        lspconfig[server].setup(actual_settings)
       end
     end,
     dependencies = {
@@ -78,8 +80,6 @@ return {
             }
           }
         },
-        rust_analyzer = base_lsp,
-        gopls = base_lsp,
         clangd = {
           on_attach = base_on_attach,
           capabilities = capabilities,
