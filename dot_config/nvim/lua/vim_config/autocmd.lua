@@ -4,3 +4,10 @@ vim.api.nvim_create_autocmd('BufReadPost', {
   pattern = '*',
   command = 'silent! normal! g`"zv'
 })
+
+vim.api.nvim_create_autocmd({'BufLeave', 'FocusLost'}, {
+  desc = 'Auto save all buffers when focus is lost',
+  group = misc_augroup,
+  pattern = '*',
+  command = 'silent! wall'
+})
