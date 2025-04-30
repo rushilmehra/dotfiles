@@ -13,4 +13,5 @@ return {
     event = { "BufReadPre", "BufReadPost", "BufNewFile" },
   },
   "ludovicchabant/vim-gutentags",
+  "tpope/vim-fugitive",
 }

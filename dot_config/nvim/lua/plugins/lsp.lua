@@ -45,7 +45,7 @@ return {
         "lua_ls",
         "rust_analyzer",
         "gopls",
-        "clangd",
+        -- "clangd",
       }
 
       local lspconfig = require("lspconfig")
@@ -80,6 +80,23 @@ return {
             }
           }
         },
+        rust_analyzer = {
+          flags = {},
+          on_attach = base_on_attach,
+          settings = {
+            ['rust-analyzer'] = {
+              cargo = {
+                targetDir = {
+                  enable = true,
+                },
+              },
+              cachePriming = {
+                enable = false,
+              }
+            }
+          }
+        },
+        gopls = base_lsp,
         clangd = {
           on_attach = base_on_attach,
           capabilities = capabilities,

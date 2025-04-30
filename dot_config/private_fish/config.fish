@@ -14,3 +14,5 @@ alias ls="ls -laG"
 set PATH /Users/rmehra/.cargo/bin $PATH
 
 starship init fish | source
+
+ulimit -S -n 1024
