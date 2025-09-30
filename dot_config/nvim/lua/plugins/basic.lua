@@ -12,6 +12,6 @@ return {
     config = true,
     event = { "BufReadPre", "BufReadPost", "BufNewFile" },
   },
-  "ludovicchabant/vim-gutentags",
+  -- "ludovicchabant/vim-gutentags",
   "tpope/vim-fugitive",
 }

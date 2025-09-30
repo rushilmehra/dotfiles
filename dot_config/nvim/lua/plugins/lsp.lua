@@ -8,6 +8,9 @@ vim.diagnostic.config({
   float = { focusable = false, style = "minimal", border = "rounded", source = "always", header = "", prefix = "" }
 })
 
+vim.lsp.enable('gopls')
+vim.lsp.enable('rust_analyzer')
+
 local base_on_attach = function(_, bufnr)
   -- Format on save
   vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
@@ -19,7 +22,7 @@ local base_on_attach = function(_, bufnr)
   buf_set_keymap("gd", "<cmd>lua require('telescope.builtin').lsp_definitions()<CR>")
   buf_set_keymap("gr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>")
   buf_set_keymap("gs", "<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>")
-  buf_set_keymap("gi", "<cmd>lua require('telescope.builtin').lsp_implementations<CR>")
+  buf_set_keymap("gi", "<cmd>lua require('telescope.builtin').lsp_implementations()<CR>")
   buf_set_keymap("<Leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")
   buf_set_keymap("gy", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
   buf_set_keymap("K", "<cmd>lua vim.lsp.buf.hover()<CR>")
@@ -42,17 +45,15 @@ return {
     "neovim/nvim-lspconfig",
     config = function(_, opts)
       local servers = {
-        "lua_ls",
-        "rust_analyzer",
         "gopls",
-        -- "clangd",
+        "rust_analyzer",
       }
 
       local lspconfig = require("lspconfig")
       for _, server in ipairs(servers) do
         local settings = opts.servers[server]
         local actual_settings = settings ~= nil and settings or base_lsp
-        lspconfig[server].setup(actual_settings)
+        vim.lsp.config[server] = actual_settings
       end
     end,
     dependencies = {
@@ -62,47 +63,15 @@ return {
     opts = {
       inlay_hints = { enabled = true },
       servers = {
-        lua_ls = {
-          flags = {},
-          on_attach = base_on_attach,
-          settings = {
-            Lua = {
-              diagnostics = {
-                globals = { "vim" }
-              },
-              format = {
-                enable = false,
-                defaultConfig = {
-                  indent_style = "space",
-                  indent_size = "2",
-                }
-              }
-            }
-          }
-        },
-        rust_analyzer = {
-          flags = {},
-          on_attach = base_on_attach,
-          settings = {
-            ['rust-analyzer'] = {
-              cargo = {
-                targetDir = {
-                  enable = true,
-                },
-              },
-              cachePriming = {
-                enable = false,
-              }
-            }
-          }
-        },
         gopls = base_lsp,
-        clangd = {
-          on_attach = base_on_attach,
-          capabilities = capabilities,
-          filetypes  = { 'cpp' },
-        },
       },
+    },
+  },
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {
+      on_attach = base_on_attach, 
     },
   },
 }

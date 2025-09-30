@@ -5,7 +5,7 @@ return {
     local configs = require("nvim-treesitter.configs")
 
     configs.setup({
-      ensure_installed = { "python", "rust", "lua", "vimdoc", "c", "cpp", "go" },
+      ensure_installed = { "python", "rust", "lua", "vimdoc", "c", "cpp", "go", "typescript" },
       highlight = {
         enable = true,
         disable = {},

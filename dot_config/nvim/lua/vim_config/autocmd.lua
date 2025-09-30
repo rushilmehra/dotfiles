@@ -11,10 +11,3 @@ vim.api.nvim_create_autocmd({'BufLeave', 'FocusLost'}, {
   pattern = '*',
   command = 'silent! wall'
 })
-
-vim.api.nvim_create_autocmd('BufWritePost', {
-  desc = 'Automatically run chezmoi apply when saving files in the chezmoi directory',
-  group = misc_augroup,
-  pattern = '{{.chezmoi.homeDir}}/.local/share/chezmoi/*',
-  command = '!chezmoi apply'
-})
